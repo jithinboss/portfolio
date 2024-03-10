@@ -1,0 +1,9 @@
+//Global
+@import './scss/global/reset';
+@import './scss/global/variables';
+@import './scss/global/typography';
+@import './scss/global/theme';
+
+//Pages
+@import './pages/Home.scss';
+@import './pages/Projects/Projects.scss';
