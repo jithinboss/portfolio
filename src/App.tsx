@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.scss";
 import React, { memo } from "react";
 import { Routes, Route } from "react-router-dom";
