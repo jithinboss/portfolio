@@ -2,7 +2,7 @@ import React from "react";
 //Components
 import { Container, Row, Col } from "react-bootstrap";
 import { Routes, Route, Link } from "react-router-dom";
-import Lottie from 'react-lottie';
+import Lottie from "react-lottie";
 
 //Assets
 import myPic from "../assets/sticker.png";
@@ -33,7 +33,7 @@ const Home: React.FC<IHome> = (props) => {
 			<div className="projects-area">
 				<div className="title">
 					<h2>Discover some of my works</h2>
-					<div className="more"><span className="underline">See all works</span></div>
+					<div className="more"><span className="underline anime-cursor">See all works</span></div>
 				</div>
 				<div className="project-list__wrap">
 					<div className="project-list">

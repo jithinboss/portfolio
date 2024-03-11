@@ -47,9 +47,9 @@ const Header = () => {
             }
             <div className="menu">
                 <ul>
-                    <li><Link to="/" className={`underline ${path === '/' ? 'active' : ''}`}>HOME</Link></li >
-                    <li><Link to="/Projects" className={`underline ${path === '/Projects' ? 'active' : ''}`}>MY WORKS</Link></li>
-                    <li><Link to="/About" className={`underline ${path === '/About' ? 'active' : ''}`}>ABOUT</Link></li>
+                    <li><Link to="/" className={`underline anime-cursor ${path === '/' ? 'active' : ''}`}>HOME</Link></li >
+                    <li><Link to="/Projects" className={`underline anime-cursor ${path === '/Projects' ? 'active' : ''}`}>MY WORKS</Link></li>
+                    <li><Link to="/About" className={`underline anime-cursor ${path === '/About' ? 'active' : ''}`}>ABOUT</Link></li>
                 </ul >
             </div >
         </header >
