@@ -1,0 +1,163 @@
+/* -------------------------------- 
+Typography
+-------------------------------- */
+
+:root {
+	--font-primary: 'Playfair Display', serif;
+	--font-secondary: 'Work Sans', sans-serif;
+	/* set base values */
+	--text-base-size: 1.5em;
+	--text-scale-ratio: 1.25;
+
+	/* type scale */
+	--text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+	--text-sm: calc(1em / var(--text-scale-ratio));
+	--text-md: calc(1em * var(--text-scale-ratio));
+	--text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+	--text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+	--text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+	--text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+
+	/* line-height */
+	--heading-line-height: 1.2;
+	--body-line-height: 1.4;
+}
+
+// @include breakpoint(md) {
+// 	:root {
+// 		--text-base-size: 1.25em;
+// 		--text-scale-ratio: 1.25;
+// 	}
+// }
+
+
+body {
+	font-size: var(--text-base-size);
+	font-family: var(--font-secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: var(--font-secondary);
+	font-weight: 600;
+	color: $black;
+	margin-bottom: var(--space-xxs);
+	line-height: var(--heading-line-height);
+}
+
+/* text size */
+.text--xxxl {
+	font-size: var(--text-xxxl);
+}
+
+h1,
+.text--xxl {
+	font-family: var(--font-primary);
+	font-size: var(--text-xxl);
+	font-weight: 600;
+}
+
+h2,
+.text--xl {
+	font-size: var(--text-xl);
+}
+
+h3,
+.text--lg {
+	font-size: var(--text-lg);
+}
+
+h4,
+.text--md {
+	font-size: var(--text-md);
+}
+
+h5 {
+	font-size: var(--text-base-size);
+}
+
+.text--sm,
+small {
+	font-size: var(--text-sm);
+}
+
+.text--xs {
+	font-size: var(--text-xs);
+}
+
+p {
+	font-size: var(--text-base-size);
+	color: $body-font-color;
+	line-height: var(--body-line-height);
+}
+
+a {
+	text-decoration: none;
+
+	&:visited {
+		color: var(--color-link-visited);
+	}
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+.text-container {
+
+	h2,
+	h3,
+	h4 {
+		margin-top: var(--space-sm);
+	}
+
+	ul,
+	ol,
+	p {
+		margin-bottom: var(--space-md);
+	}
+
+	ul,
+	ol {
+		list-style-position: outside;
+		padding-left: 24px;
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	ul li,
+	ol li {
+		line-height: var(--body-line-height);
+	}
+
+	li {
+
+		line-height: 1.4;
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	u {
+		text-decoration: underline;
+	}
+}
+
+/* utility classes */
+.truncate {
+	// truncate text if it exceeds parent
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

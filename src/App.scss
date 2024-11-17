@@ -1,0 +1,13 @@
+//Global
+@import './scss/global/reset';
+@import './scss/global/variables';
+@import './scss/global/typography';
+@import './scss/global/theme';
+
+//Pages
+@import './pages/Home.scss';
+@import './pages/Projects/Projects.scss';
+
+
+/* The following line can be included in a src/App.scss */
+//@import '~bootstrap/scss/bootstrap';

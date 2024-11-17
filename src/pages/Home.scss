@@ -1,0 +1,343 @@
+.main-layout {
+
+	max-width: 100%;
+	height: 100%;
+	margin: 0 6rem;
+
+	::selection {
+
+		background: $primary-color;
+		color: $white;
+
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+
+		font-family: var(--font-primary);
+	}
+
+
+	@import 'Header.scss';
+
+	.home-page {
+
+		height: 100%;
+
+		.banner-area {
+
+			height: calc(100vh - 100px);
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			position: relative;
+
+
+			.banner-text {
+
+				position: relative;
+
+
+				.my-pic {
+
+					height: 120px;
+					width: 120px;
+					position: absolute;
+					top: -120px;
+
+				}
+
+
+				h1 {
+
+					//font-size: 3rem;
+
+					span {
+
+						color: $primary-color;
+
+					}
+
+				}
+
+			}
+
+			.scroll-line {
+
+				width: 100%;
+				margin: 0 auto;
+				height: 80px;
+				padding: 0;
+				position: absolute;
+				bottom: 24px;
+				left: 0;
+				right: 0;
+				margin: 0;
+				text-align: center;
+
+				&:hover {
+
+					cursor: pointer;
+
+				}
+
+
+				iframe {
+
+					width: 80px;
+					height: 80px;
+
+				}
+
+				.hscroll-line {
+
+					bottom: 30px;
+					right: 50%;
+					height: 2px;
+					position: absolute;
+					overflow: hidden;
+					width: 60px;
+					transform: rotate(90deg);
+
+					&::before,
+					&::after {
+
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						content: "";
+
+					}
+
+					&:before {
+
+						background: #eae9e6;
+
+					}
+
+					&::after {
+
+						background: $primary-color;
+						animation: move 2s infinite
+					}
+
+					@keyframes move {
+
+						0% {
+
+							transform: translate3d(-200%, 0, 0);
+
+						}
+
+						60% {
+
+							transform: translate3d(100%, 0, 0);
+
+						}
+
+						100% {
+
+							transform: translate3d(100%, 0, 0);
+
+						}
+
+					}
+
+				}
+
+			}
+
+
+		}
+
+		.projects-area {
+
+			margin-bottom: 4rem;
+
+			.title {
+
+				display: flex;
+				width: 100%;
+
+
+				h2 {
+
+					margin: 6rem 0;
+					flex-grow: 1;
+
+				}
+
+				.more {
+
+					flex-grow: 1;
+					display: flex;
+					justify-content: flex-end;
+					align-items: flex-end;
+					padding-bottom: 2rem;
+
+
+				}
+
+			}
+
+			.project-list__wrap {
+
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				column-gap: 2rem;
+
+				.project-list {
+
+					display: flex;
+					flex-direction: column;
+
+					.project-item {
+
+						border-top: 1px solid $black;
+						padding: 2rem 0;
+						position: relative;
+
+						&:last-child {
+
+							border-bottom: 1px solid $black;
+
+						}
+
+						h4 {
+
+							margin-bottom: 2rem;
+
+						}
+
+						h5 {
+
+							font-size: 1.2rem;
+
+						}
+
+						.arrow-up {
+
+							opacity: 0;
+							height: 24px;
+							width: 24px;
+							display: block;
+							position: absolute;
+							right: 0;
+							bottom: 2.5rem;
+
+						}
+
+						&:hover {
+
+							cursor: pointer;
+
+							.arrow-up {
+
+								opacity: 1;
+
+							}
+						}
+
+					}
+
+
+				}
+
+				.project-thumbnail {
+
+					position: relative;
+
+					.background-color {
+
+						position: absolute;
+						left: 0;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						height: 100%;
+						width: 100%;
+						background-color: #010342;
+						animation: zoom-in-zoom-out 1s ease infinite;
+
+					}
+
+					.background-img {
+
+						position: absolute;
+						left: 0;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						height: 100%;
+						width: 100%;
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-position: center center;
+						transform: scale(0.8);
+
+
+
+					}
+
+					&.animated-thumb {
+
+
+						.background-color {
+
+							animation: zoom-in 1s ease-in-out;
+							animation-fill-mode: forwards;
+							-webkit-animation-fill-mode: forwards;
+
+						}
+
+						.background-img {
+
+							transform: scale(0.75);
+							animation: zoom-out 1s ease-in-out;
+							animation-fill-mode: forwards;
+							-webkit-animation-fill-mode: forwards;
+
+
+						}
+
+					}
+
+					@keyframes zoom-in {
+
+						0% {
+							transform: scale(1, 1);
+						}
+
+						100% {
+							transform: scale(0.95, 0.95);
+						}
+
+					}
+
+					@keyframes zoom-out {
+
+						0% {
+							transform: scale(0.75, 0.75);
+						}
+
+						100% {
+							transform: scale(0.85, 0.85);
+						}
+
+					}
+
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
