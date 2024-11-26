@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 //Assets
 import myPic from "../assets/sticker.png";
 import zlinkBanner from "../assets/Projects/zlinklogo/zlink-banner.png";
@@ -8,11 +8,24 @@ interface IHome {
 
 }
 
+// interface ScrollToDivProps {
+//   scrollToId: string;
+// }
+
 const Home: React.FC<IHome> = (props) => {
 
 	const [thumbHover, setThumHover] = useState(false);
 	const toggleHover = () => setThumHover(!thumbHover);
-	const scrollRef = useRef(null);
+	
+	const targetDivRef = useRef<HTMLDivElement>(null);
+
+	const handleClick = () => {
+		if (targetDivRef.current) {
+		targetDivRef.current.scrollIntoView({ behavior: 'smooth' });
+		}
+	};
+	  
+
 
 	return (
 		<div className="home-page">
@@ -24,9 +37,9 @@ const Home: React.FC<IHome> = (props) => {
 						<h2>Hey I'm, <span>Jithin Bose</span> !</h2>
 						<h2>A <span className="glitch-animation" title="Product Designer">Product Designer</span>.</h2>
 						<div className="banner-caption">
-							<h5>Designing intuitive and engaging digital</h5>
-							<h5>experiences. Currently working on next-gen</h5>
-							<h5>finance products at <span className="grad">SponsorCloud</span>.</h5>
+							<h6>Designing intuitive and engaging digital experiences.</h6>
+							<h6>Currently working on next-gen real estate investment</h6>
+							<h6>products at <span className="grad">SponsorCloud</span>.</h6>
 						</div>
 					</div>
 					<div className="jb-avatar">
@@ -35,12 +48,7 @@ const Home: React.FC<IHome> = (props) => {
 						</div>
 					</div>
 				</div>
-				<div className="scroll-line" onClick={() =>
-					window.scrollTo({
-						top: scrollRef.current.offsetTop,
-						behavior: "smooth"
-					})
-				}>
+				<div className="scroll-line" onClick={handleClick} >
 					<div className="mouse_scroll">
 						<div className="mouse">
 							<div className="wheel"></div>
@@ -54,31 +62,31 @@ const Home: React.FC<IHome> = (props) => {
 					{/* <iframe src="https://lottie.host/embed/53ec38da-00c5-498f-ae78-1604a392a658/56Awl8uHKj.json"></iframe> */}
 				</div>
 			</div >
-			<div className="projects-area" ref={scrollRef}>
+			<div className="projects-area" ref={targetDivRef}>
 				<div className="title">
-					<h3>Discover some of my works</h3>
+					<h4>Discover some of my works</h4>
 					<div className="more"><span className="underline anime-cursor">See all works</span></div>
 				</div>
 				<div className="project-list__wrap">
 					<div className="project-list">
 						<div className="project-item" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-							<h4>How I designed a e-commerce website- a UX case study</h4>
-							<h5>UI /UX / Branding</h5>
+							<h5>How I designed a e-commerce website- a UX case study</h5>
+							<span>UI /UX / Branding</span>
 							<iframe className="arrow-up" src="https://lottie.host/embed/a94ceb5c-f2bc-4a88-8f78-8b0be666f52f/c2IAclmqMI.json"></iframe>
 						</div>
 						<div className="project-item" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-							<h4>Rebranding zLink</h4>
-							<h5>Branding / Visual Design</h5>
+							<h5>Rebranding zLink</h5>
+							<span>Branding / Visual Design</span>
 							<iframe className="arrow-up" src="https://lottie.host/embed/a94ceb5c-f2bc-4a88-8f78-8b0be666f52f/c2IAclmqMI.json"></iframe>
 						</div>
 						<div className="project-item" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-							<h4>Rebranding zLink</h4>
-							<h5>Branding / Visual Design</h5>
+							<h5>Rebranding zLink</h5>
+							<span>Branding / Visual Design</span>
 							<iframe className="arrow-up" src="https://lottie.host/embed/a94ceb5c-f2bc-4a88-8f78-8b0be666f52f/c2IAclmqMI.json"></iframe>
 						</div>
 						<div className="project-item" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-							<h4>Rebranding zLink</h4>
-							<h5>Branding / Visual Design</h5>
+							<h5>Rebranding zLink</h5>
+							<span>Branding / Visual Design</span>
 							<iframe className="arrow-up" src="https://lottie.host/embed/a94ceb5c-f2bc-4a88-8f78-8b0be666f52f/c2IAclmqMI.json"></iframe>
 						</div>
 					</div>
