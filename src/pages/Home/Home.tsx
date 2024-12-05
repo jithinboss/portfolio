@@ -1,4 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
+import { gsap } from 'gsap';
+import * as THREE from 'three';
+import { TextPlugin } from 'gsap/TextPlugin';
+import { Asterisk, ArrowDown } from 'lucide-react';
 //Assets
 import myImg from "../../assets/jb-hey.png";
 //Components
@@ -9,93 +13,86 @@ interface IHome {
 
 }
 
-// interface ScrollToDivProps {
-//   scrollToId: string;
-// }
 
 const Home: React.FC<IHome> = (props) => {
 
 	const [thumbHover, setThumHover] = useState(false);
 	const toggleHover = () => setThumHover(!thumbHover);
-	
+
 	const targetDivRef = useRef<HTMLDivElement>(null);
+	const marqueeRef = useRef<HTMLDivElement>(null);
+	const textRef = useRef(null);
+
+	useEffect(() => {
+		gsap.registerPlugin(TextPlugin);
+
+		const tl = gsap.timeline({ repeat: -1, yoyo: true, delay: 1 });
+
+		tl.to(textRef.current, { duration: 1, delay: 1, text: "Developer", ease: "power2.inOut", color: "#ff8709" })
+			.to(textRef.current, { duration: 1, delay: 1 });
+
+	}, []);
+
+	useEffect(() => {
+		if (marqueeRef.current) {
+		  const marqueeContent = marqueeRef.current.querySelector('.marquee__content');
+	
+		  if (marqueeContent) {
+			gsap.to(marqueeContent, {
+			  x: '-101%', 
+			  duration: 20, 
+			  ease: 'linear', 
+			  repeat: -1, 
+			});
+		  }
+		}
+	  }, []);
 
 	const handleClick = () => {
 		if (targetDivRef.current) {
-		targetDivRef.current.scrollIntoView({ behavior: 'smooth' });
+			targetDivRef.current.scrollIntoView({ behavior: 'smooth' });
 		}
 	};
-	  
 
 
 	return (
 		<div className="home-page">
-			<div className="banner-area">
-				{/* <div className="gradient-banner"></div> */}
+			<div className="banner-area" >
 				<div className="banner-wrapper">
 					<div className="banner-text">
-						{/* <img className="my-pic" src={myPic} /> */}
-						<h2>Hey I'm, <span>Jithin Bose</span> !</h2>
-						<h2>A <span className="glitch-animation" title="Product Designer">Product Designer</span>.</h2>
-						<div className="banner-caption">
-							<h6>Designing intuitive and engaging digital experiences.</h6>
-							<h6>Currently working on next-gen real estate investment</h6>
-							<h6>products at <span className="grad">SponsorCloud</span>.</h6>
-						</div>
-					</div>
-					<div className="jb-avatar">
-						<div className="image-wrapper">
-							<img src={myImg} />
-						</div>
+						<h1><span>Hey I'm <label>Jithin Bose</label></span>Product</h1>
+						<h1>
+							<div className="scram-text" ref={textRef}>Designer</div>
+							<div className="description">
+								<span>Designing intuitive and engaging</span>
+								<span>digital experiences. Currently working</span>
+								<span>on next gen real estate investment</span>
+								<span>products at SponsorCloud</span>
+							</div>
+						</h1>
 					</div>
 				</div>
-				<div className="scroll-line" onClick={handleClick} >
-					<div className="mouse_scroll">
-						<div className="mouse">
-							<div className="wheel"></div>
-						</div>
-						<div>
-							<span className="m_scroll_arrows unu"></span>
-							<span className="m_scroll_arrows doi"></span>
-							<span className="m_scroll_arrows trei"></span>
-						</div>
+				<div className="scroll-arrow">
+					<div className="arrow">
+						<ArrowDown onClick={handleClick} strokeWidth={1} />
 					</div>
-					{/* <iframe src="https://lottie.host/embed/53ec38da-00c5-498f-ae78-1604a392a658/56Awl8uHKj.json"></iframe> */}
 				</div>
 			</div >
-			<div className="projects-area" ref={targetDivRef}>
-				<div className="title">
-					<h4>Discover some of my works</h4>
-					<div className="more"><span className="underline anime-cursor">See all works</span></div>
-				</div>
-				<div className="project-list__wrap">
-					<ProjectSection/>
-					{/* <div className="project-list">
-						<div className="project-item" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-							<h5>How I designed a e-commerce website- a UX case study</h5>
-							<span>UI /UX / Branding</span>
-							<iframe className="arrow-up" src="https://lottie.host/embed/a94ceb5c-f2bc-4a88-8f78-8b0be666f52f/c2IAclmqMI.json"></iframe>
-						</div>
-						<div className="project-item" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-							<h5>Rebranding zLink</h5>
-							<span>Branding / Visual Design</span>
-							<iframe className="arrow-up" src="https://lottie.host/embed/a94ceb5c-f2bc-4a88-8f78-8b0be666f52f/c2IAclmqMI.json"></iframe>
-						</div>
-						<div className="project-item" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-							<h5>Rebranding zLink</h5>
-							<span>Branding / Visual Design</span>
-							<iframe className="arrow-up" src="https://lottie.host/embed/a94ceb5c-f2bc-4a88-8f78-8b0be666f52f/c2IAclmqMI.json"></iframe>
-						</div>
-						<div className="project-item" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-							<h5>Rebranding zLink</h5>
-							<span>Branding / Visual Design</span>
-							<iframe className="arrow-up" src="https://lottie.host/embed/a94ceb5c-f2bc-4a88-8f78-8b0be666f52f/c2IAclmqMI.json"></iframe>
-						</div>
+			<div className="marquee-sec" ref={marqueeRef}>
+				<div className="marquee__inner">
+					<div className="marquee__content">
+						<h3>Product Design</h3>
+						<div className="star-svg"><Asterisk color="#FFF" /></div>
+						<h3>UX Design</h3>
+						<div className="star-svg"><Asterisk color="#FFF" /></div>
+						<h3>UI Design</h3> 
+						<div className="star-svg"><Asterisk color="#FFF" /></div>
+						<h3>Front-End Dev</h3> 
+						<div className="star-svg"><Asterisk color="#FFF" /></div>
+						<h3>React Js</h3> 
+						<div className="star-svg"><Asterisk color="#FFF" /></div>
+						<h3>10+ Year Experience</h3>
 					</div>
-					<div className={thumbHover ? 'project-thumbnail animated-thumb' : 'project-thumbnail'}>
-						<div className="background-color"></div>
-						<div className="background-img" style={{ backgroundImage: `url(${zlinkBanner})` }}></div>
-					</div> */}
 				</div>
 			</div>
 		</div>

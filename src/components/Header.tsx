@@ -11,10 +11,9 @@ const Header: React.FC = () => {
 
 	return (
 		<header className={`${path === '/' ? 'main-page' : 'inner-page'}`}>
-			{/* <div className="profile-pic">
-				<img src={myImg} />
-				<h6>Jithin Bose</h6>
-			</div> */}
+			<div className="logo">
+				<h6>JB</h6>
+			</div>
 			<div className="menu">
 				<ul>
 					<li><Link to="/" className={`underline anime-cursor ${path === '/' ? 'active' : ''}`}>Home</Link></li>
@@ -26,11 +25,11 @@ const Header: React.FC = () => {
 					<li><Link to="/Contacts" className={`underline anime-cursor ${path === '/Contacts' ? 'active' : ''}`}>Contact</Link></li>
 				</ul>
 			</div >
-			<div className="social-links">
+			{/* <div className="social-links">
 				<ul>
 					<li><img src={linkedin} /></li>
 				</ul>
-			</div>
+			</div> */}
 		</header >
 	);
 };

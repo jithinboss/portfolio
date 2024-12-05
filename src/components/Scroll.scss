@@ -17,8 +17,8 @@
     /* Chrome, Safari, Opera */
     transform: rotate(45deg);
 
-    border-right: 2px solid $primary-color;
-    border-bottom: 2px solid $primary-color;
+    border-right: 2px solid $shocking-green-color;
+    border-bottom: 2px solid $shocking-green-color;
     margin: 0 0 3px 4px;
 
     width: 16px;
@@ -85,12 +85,12 @@
     width: 2px;
     display: block;
     margin: 5px auto;
-    background: $primary-color;
+    background: $shocking-green-color;
     position: relative;
 
     height: 4px;
     width: 4px;
-    border: 2px solid $primary-color;
+    border: 2px solid $shocking-green-color;
     -webkit-border-radius: 8px;
     border-radius: 8px;
 }
