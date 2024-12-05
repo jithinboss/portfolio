@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
 //Components
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 //Pages
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Works from "./pages/Works";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
@@ -22,10 +23,8 @@ const App: React.FC = () => {
 						<Route path="/about" element={<About />} />
 						<Route path="/contacts" element={<Contacts />} />
 					</Routes>
+					<Footer />
 				</Router>
-				<footer>
-					<span>© 2023 by Jithin Bose. All rights reserved.</span>
-				</footer>
 			</div>
 		</>
 	);

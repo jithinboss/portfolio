@@ -1,17 +1,10 @@
 .main-layout {
 
 	max-width: 100%;
-	margin: 0 6rem;
-
-	::selection {
-
-		background: $primary-color;
-		color: $white;
-
-	}
+	margin: 0 12rem;
 
 
-	@import '../components/Header.scss';
+	@import '../../components/Header.scss';
 
 
 	.home-page {
@@ -92,7 +85,7 @@
 							color: $primary-color;
 							position: relative;
 
-							@import '../components/Glitch.scss';
+							@import '../../components/Glitch.scss';
 
 						}
 
@@ -198,7 +191,7 @@
 
 							top: 18px;
 							left: 20px;
-							background-color: $primary-color ;
+							background-color: $primary-color;
 							z-index: -1;
 
 							@media (max-width: 1200px) {
@@ -340,7 +333,7 @@
 
 			.scroll-line {
 
-				@import "../components/Scroll.scss";
+				@import "../../components/Scroll.scss";
 
 			}
 
@@ -349,17 +342,18 @@
 
 		.projects-area {
 
+			padding-top: 2rem;
 			margin-bottom: 4rem;
 
 			.title {
 
 				display: flex;
 				width: 100%;
+				margin: 2rem 0 4rem 0;
 
 
-				h4 {
-
-					margin: 2rem 0 4rem 0;
+				h3 {
+				
 					flex-grow: 1;
 
 				}
@@ -369,9 +363,13 @@
 					flex-grow: 1;
 					display: flex;
 					justify-content: flex-end;
-					align-items: flex-end;
-					padding-bottom: 2rem;
+					align-items: center;
 
+					span {
+
+						font-size: $font-size-base;
+
+					}
 
 				}
 
@@ -379,160 +377,162 @@
 
 			.project-list__wrap {
 
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				column-gap: 2rem;
+				// display: grid;
+				// grid-template-columns: 1fr 1fr;
+				// column-gap: 2rem;
 
-				.project-list {
+				@import "../Home/ProjectSection.scss";
 
-					display: flex;
-					flex-direction: column;
+				// .project-list {
 
-					.project-item {
+				// 	display: flex;
+				// 	flex-direction: column;
 
-						border-top: 1px solid $black;
-						padding: 2rem 0;
-						position: relative;
+				// 	.project-item {
 
-						&:last-child {
+				// 		border-top: 1px solid $black;
+				// 		padding: 2rem 0;
+				// 		position: relative;
 
-							border-bottom: 1px solid $black;
+				// 		&:last-child {
 
-						}
+				// 			border-bottom: 1px solid $black;
 
-						h5 {
+				// 		}
 
-							margin-bottom: 0.5rem;
+				// 		h5 {
 
-						}
+				// 			margin-bottom: 0.5rem;
 
-						span {
+				// 		}
 
-							font-family: $secondary-font;
-							font-weight: normal;
+				// 		span {
 
-						}
+				// 			font-family: $secondary-font;
+				// 			font-weight: normal;
 
-						.arrow-up {
+				// 		}
 
-							opacity: 0;
-							height: 24px;
-							width: 24px;
-							display: block;
-							position: absolute;
-							right: 0;
-							bottom: 2.5rem;
+				// 		.arrow-up {
 
-						}
+				// 			opacity: 0;
+				// 			height: 24px;
+				// 			width: 24px;
+				// 			display: block;
+				// 			position: absolute;
+				// 			right: 0;
+				// 			bottom: 2.5rem;
 
-						&:hover {
+				// 		}
 
-							cursor: pointer;
+				// 		&:hover {
 
-							.arrow-up {
+				// 			cursor: pointer;
 
-								opacity: 1;
+				// 			.arrow-up {
 
-							}
+				// 				opacity: 1;
 
-							h5,span {
+				// 			}
 
-								color: $primary-color;
+				// 			h5,span {
 
-							}
+				// 				color: $primary-color;
 
-						}
+				// 			}
 
-					}
+				// 		}
 
-
-				}
-
-				.project-thumbnail {
-
-					position: relative;
-
-					.background-color {
-
-						position: absolute;
-						left: 0;
-						right: 0;
-						top: 0;
-						bottom: 0;
-						height: 100%;
-						width: 100%;
-						background-color: #010342;
-						animation: zoom-in-zoom-out 1s ease infinite;
-
-					}
-
-					.background-img {
-
-						position: absolute;
-						left: 0;
-						right: 0;
-						top: 0;
-						bottom: 0;
-						height: 100%;
-						width: 100%;
-						background-size: contain;
-						background-repeat: no-repeat;
-						background-position: center center;
-						transform: scale(0.8);
+				// 	}
 
 
+				// }
 
-					}
+				// .project-thumbnail {
 
-					&.animated-thumb {
+				// 	position: relative;
 
+				// 	.background-color {
 
-						.background-color {
+				// 		position: absolute;
+				// 		left: 0;
+				// 		right: 0;
+				// 		top: 0;
+				// 		bottom: 0;
+				// 		height: 100%;
+				// 		width: 100%;
+				// 		background-color: #010342;
+				// 		animation: zoom-in-zoom-out 1s ease infinite;
 
-							animation: zoom-in 1s ease-in-out;
-							animation-fill-mode: forwards;
-							-webkit-animation-fill-mode: forwards;
+				// 	}
 
-						}
+				// 	.background-img {
 
-						.background-img {
-
-							transform: scale(0.75);
-							animation: zoom-out 1s ease-in-out;
-							animation-fill-mode: forwards;
-							-webkit-animation-fill-mode: forwards;
-
-
-						}
-
-					}
-
-					@keyframes zoom-in {
-
-						0% {
-							transform: scale(1, 1);
-						}
-
-						100% {
-							transform: scale(0.95, 0.95);
-						}
-
-					}
-
-					@keyframes zoom-out {
-
-						0% {
-							transform: scale(0.75, 0.75);
-						}
-
-						100% {
-							transform: scale(0.85, 0.85);
-						}
-
-					}
+				// 		position: absolute;
+				// 		left: 0;
+				// 		right: 0;
+				// 		top: 0;
+				// 		bottom: 0;
+				// 		height: 100%;
+				// 		width: 100%;
+				// 		background-size: contain;
+				// 		background-repeat: no-repeat;
+				// 		background-position: center center;
+				// 		transform: scale(0.8);
 
 
-				}
+
+				// 	}
+
+				// 	&.animated-thumb {
+
+
+				// 		.background-color {
+
+				// 			animation: zoom-in 1s ease-in-out;
+				// 			animation-fill-mode: forwards;
+				// 			-webkit-animation-fill-mode: forwards;
+
+				// 		}
+
+				// 		.background-img {
+
+				// 			transform: scale(0.75);
+				// 			animation: zoom-out 1s ease-in-out;
+				// 			animation-fill-mode: forwards;
+				// 			-webkit-animation-fill-mode: forwards;
+
+
+				// 		}
+
+				// 	}
+
+				// 	@keyframes zoom-in {
+
+				// 		0% {
+				// 			transform: scale(1, 1);
+				// 		}
+
+				// 		100% {
+				// 			transform: scale(0.95, 0.95);
+				// 		}
+
+				// 	}
+
+				// 	@keyframes zoom-out {
+
+				// 		0% {
+				// 			transform: scale(0.75, 0.75);
+				// 		}
+
+				// 		100% {
+				// 			transform: scale(0.85, 0.85);
+				// 		}
+
+				// 	}
+
+
+				// }
 
 			}
 
@@ -540,16 +540,4 @@
 
 	}
 
-	footer {
-
-		margin: 2em 0;
-		padding: 2em 0;
-
-		span {
-
-			font-size: var(--text-base);
-
-		}
-
-	}
 }

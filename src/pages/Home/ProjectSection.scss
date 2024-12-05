@@ -1,0 +1,77 @@
+.project-listing {
+
+    .project-card {
+
+        border-top: 1px solid $black;
+        padding: 4rem 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .project-data {
+
+            flex: 1;
+            padding-right: 4rem;
+
+            h5 {
+
+                margin-bottom: 1rem;
+
+            }
+
+            span {
+
+                &.description {
+
+                    font-size: $font-size-base;
+                    margin-bottom: 1rem;
+                    display: inline-block;
+
+                }
+            }
+
+            .tech-list {
+
+                span {
+
+                    display: inline-block;
+                    background-color: rgba($color: $body-font-color, $alpha: 0.1);
+                    padding: 4px 6px;
+                    margin-right: 6px;
+                    font-size: $font-size-small;
+
+                }
+
+            }
+
+            .read-more {
+
+                margin-top: 2rem;
+                display: flex;
+                align-items: center;
+
+                a {
+
+                    font-weight: 600;
+                    font-size: $font-size-small;
+                    cursor: pointer;
+
+                }
+
+            }
+
+        }
+
+        .thumbnail-area {
+
+            display: flex;
+            background-color: $white;
+            width: 50%;
+            height: 420px;
+
+        }
+
+    }
+
+
+}

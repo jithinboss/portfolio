@@ -1,0 +1,46 @@
+.footer-wrapper {
+
+    .contact {
+
+        margin-top: 6rem;
+
+        h6 {
+
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            font-family: $secondary-font;
+            font-weight: normal;
+            display: inline-block;
+            color: $white;
+            background-color: $primary-color;
+
+        }
+
+        h5 {
+
+            font-family: $secondary-font;
+
+            &.email {
+
+                margin-top: 3rem;
+                font-family: $primary-font;
+                font-weight: normal;
+
+            }
+           
+
+        }
+
+    }
+    
+    @import './Header.scss';
+
+    footer {
+
+        border-top: 1px solid $black;
+        margin-top: 3rem;
+
+    }
+
+
+}

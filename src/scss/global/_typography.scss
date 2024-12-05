@@ -5,6 +5,13 @@
 $primary-font:'Space Grotesk', serif;
 $secondary-font:'Inter', sans-serif;
 
+::selection {
+
+	background: $primary-color;
+	color: $white;
+
+}
+
 html {
 	font-size: 100%;
 }

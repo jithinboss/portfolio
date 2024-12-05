@@ -1,8 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 //Assets
-import myPic from "../assets/sticker.png";
-import zlinkBanner from "../assets/Projects/zlinklogo/zlink-banner.png";
-import myImg from "../assets/jb-hey.png";
+import myImg from "../../assets/jb-hey.png";
+//Components
+import ProjectSection from "../../pages/Home/ProjectSection";
+
 
 interface IHome {
 
@@ -68,7 +69,8 @@ const Home: React.FC<IHome> = (props) => {
 					<div className="more"><span className="underline anime-cursor">See all works</span></div>
 				</div>
 				<div className="project-list__wrap">
-					<div className="project-list">
+					<ProjectSection/>
+					{/* <div className="project-list">
 						<div className="project-item" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
 							<h5>How I designed a e-commerce website- a UX case study</h5>
 							<span>UI /UX / Branding</span>
@@ -93,7 +95,7 @@ const Home: React.FC<IHome> = (props) => {
 					<div className={thumbHover ? 'project-thumbnail animated-thumb' : 'project-thumbnail'}>
 						<div className="background-color"></div>
 						<div className="background-img" style={{ backgroundImage: `url(${zlinkBanner})` }}></div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>
